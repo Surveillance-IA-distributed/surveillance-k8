@@ -22,8 +22,8 @@ echo "=== [5/6] Mostrando estado de servicios ==="
 sudo systemctl status docker --no-pager || sudo systemctl status containerd --no-pager
 sudo systemctl status kubelet --no-pager
 
-mkdir -p ~/.kube
-sudo cp /etc/kubernetes/admin.conf ~/.kube/config
+#mkdir -p ~/.kube
+#sudo cp /etc/kubernetes/admin.conf ~/.kube/config
 
 echo "=== [6/6] Listo. Puedes iniciar el nodo usando 'kubeadm init' o 'kubeadm join' ==="
 
