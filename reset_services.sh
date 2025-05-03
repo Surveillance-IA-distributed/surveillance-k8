@@ -11,7 +11,8 @@ echo "=== [3/6] Eliminando configuraciones de red y datos ==="
 sudo iptables -F && sudo iptables -t nat -F && sudo iptables -t mangle -F && sudo iptables -X
 sudo ipvsadm --clear 2>/dev/null
 sudo rm -rf ~/.kube
-sudo rm -rf /etc/cni /etc/kubernetes /var/lib/etcd 
+sudo rm -rf /etc/kubernetes /var/lib/etcd /var/lib/kubelet /opt/cni /etc/cni /var/lib/cni
+
 echo "=== [4/6] Reiniciando el contenedor y kubelet ==="
 sudo systemctl daemon-reexec
 sudo systemctl restart docker || sudo systemctl restart containerd
